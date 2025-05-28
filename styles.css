@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&family=Montserrat:wght@300;400&family=Raleway&family=Roboto:wght@300&family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Share+Tech&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    color: rgb(210, 210, 210);
+    background-color: #080923;
+    background-image: linear-gradient(to right, #080923, #101143);
+}
+a{
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    font-size: 12px;
+}
+.cent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+    padding: 20px
+}
+
+h1{
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 8px;
+}
+.content{
+    flex-basis: 2;
+    text-align: center;
+    max-width: 800px;
+    margin-top: 80px;
+    /* background-color: red; */
+}
+button{
+    margin-top: 20px;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #ffffff00;
+    border: white solid;
+    width: 120px;
+    border-radius: 10px;
+    transition: all 0.2s ease-out;
+}
+
+button:hover{
+    background-color: rgb(5, 180, 58);
+    color: #fff;
+    transform: scale(1.2);
+    /* border: none; */
+    border-radius: 20px;
+}
+
+footer{
+    position: fixed;
+    font-size: 10px;
+    bottom: 60px;
+    width: 100%;
+    text-align: center;
+    /* background-color: red; */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.social-icons{
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    gap: 25px;
+}
+
+.social-icons a svg {
+    height: 18px;
+    fill: white;
+}
+
+.social-icons a {
+    margin: 0;
+}
+
+@media(max-width: 500px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+    .links{
+        display: none;
+    }
+
+    h2{
+        position: static;
+    }
+}
