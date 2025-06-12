@@ -9,11 +9,29 @@
 
 .crm-form{
    
-    margin: 12rem;
-    display: none;
-    /* background-color: red; */
-    /* transform: scale(0); */   
     
+    width: 60% !important;
+    
+}
+
+.form-ctrl{
+    background-color: rgba(23, 23, 23, 0.581);
+    width: 100%;
+    position: fixed; 
+    height: 100%;
+    top: 50%;
+    left: 50%;    
+    transform: translate(-50%, -50%);
+   
+    flex-direction: column;
+    align-items: center;
+    display: none;
+
+}
+
+svg{
+    width: 60px;
+    margin-right: auto;
 }
 
 .inject {
@@ -43,23 +61,27 @@
 
 
 .show{
-    display: block;
-    
+    display: flex;;    
 }
 
 body {
-    display: flex;
-    flex-direction: column;    
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    align-items: center; 
     color: #fff;
-    height: auto !important;
-    /* background-color: rebeccapurple !important; */
     background-image: linear-gradient(to right, #080923, #101143);
 }
 a{
     text-decoration: none;
     color: white;
-    margin-left: 40px;
-    font-size: 12px;
+}
+
+ul :nth-child(1){
+    margin-right: auto;
+}
+
+li svg{
+    margin-right: auto !important;
 }
 .cent {
     display: flex;
@@ -81,6 +103,7 @@ h1{
     text-align: center;
     max-width: 80%;
     margin-top: 80px;
+    flex-grow: 1;
     /* background-color: red; */
 }
 button{
@@ -114,12 +137,30 @@ footer{
 
 .container{
     /* background-color: red; */
-    height: calc(100vh - 250px);
+   
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 
+}
+
+nav{
+
+}
+
+ul {
+
+    display: flex;
+    padding: 2rem;
+    width: 100%;
+    align-items: center;
+}
+
+ul li{
+    margin-left: 4rem;
+    list-style: none;
 }
 
 .social-icons{
