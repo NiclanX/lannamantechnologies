@@ -5,6 +5,24 @@ const closeBtn = document.querySelector('.close-btn');
 const formCtrl = document.querySelector('.form-bg');
 const overlay = document.querySelector('.overlay');
 
+const mode = document.getElementById('mode');
+
+mode.addEventListener('click', ()=>{
+   const body= document.querySelector('body');
+   const icon = document.querySelector('#icon');
+   body.classList.toggle('lightMode');
+
+   if (body.classList.contains('lightMode')) {
+    icon.innerHTML = `dark_mode`;
+   } else {
+    icon.innerHTML = `light_mode`;
+   }
+
+    
+    
+    
+})
+
 
 clicker.addEventListener('click', () => {
     

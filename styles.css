@@ -8,9 +8,28 @@
 }
 
 :root {
-    --bg-col: purple;
+    --bg-col1: #080923;
+    --bg-col2: #101143;
+
     --body-col: #fff;
-    --danger: red;  
+    --danger: red; 
+    
+    --btn-bg: #34a853;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    align-items: center; 
+    color: var(--body-col);
+    background-image: linear-gradient(to right, var(--bg-col1), var(--bg-col2));
+}
+
+.lightMode{
+    --bg-col1: #fff;
+    --bg-col2: #f4f2ff;    
+    --body-col: #0d0820;
+    --btn-bg: #fbbc05;
 }
 
 .close-btn{
@@ -23,12 +42,15 @@
     top: 0;
     right: 0;
     transition: 300ms ease-in-out;
+    margin-right: 20px;
 }
 
 .close-btn:hover{
     color: var(--danger);
     transform: scale(1.2);
 }
+
+
 
 .close-btn::before,
 .close-btn::after {
@@ -108,16 +130,14 @@ svg{
    transform: translate(-50%, -50%) scale(1);  
 }
 
-body {
-    display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    align-items: center; 
-    color: var(--body-col);
-    background-image: linear-gradient(to right, #080923, #101143);
-}
+
 a{
     text-decoration: none;
-    color: white;
+    color: var(--body-col);
+}
+i{
+    display: flex;
+    justify-content: center;
 }
 
 ul :nth-child(1){
@@ -126,14 +146,19 @@ ul :nth-child(1){
 
 li svg{
     margin-right: auto !important;
+    
+}
+
+svg{
+    fill: var(--body-col);
 }
 .cent {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: blueviolet; */
     padding: 20px
 }
+
 h2{
     font-size: 6rem;
 }
@@ -152,22 +177,41 @@ h1{
 }
 button{
     margin-top: 20px;
-    color: white;
+    color: var(--body-col);
     cursor: pointer;
     padding: 10px;
     background-color: #ffffff00;
-    border: white solid;
+    border: var(--body-col);
     width: 120px;
     border-radius: 10px;
     transition: all 0.1s ease-out;
 }
 
+li>button{
+    
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   margin: 0px;
+}
+
+.material-icons{
+     font-size: 3rem;
+     vertical-align: middle;
+     margin: 0px !important;
+}
+
+
+
+
 button:hover{
-    background-color: rgb(5, 180, 58);
+    background-color: var(--btn-bg);
     color: #fff;
     transform: scale(1.1);
+    transition: 300ms ease-in-out;
     border-radius: 20px;
-    box-shadow: 0px 5px 2px #000000b9 ;
+    /* box-shadow: 0px 5px 2px #000000b9 ; */
 }
 
 footer{
