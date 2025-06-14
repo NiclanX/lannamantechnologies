@@ -7,20 +7,19 @@ const overlay = document.querySelector('.overlay');
 
 const mode = document.getElementById('mode');
 
-mode.addEventListener('click', ()=>{
-   const body= document.querySelector('body');
-   const icon = document.querySelector('#icon');
-   body.classList.toggle('lightMode');
+mode.addEventListener('click', () => {
+    const body = document.querySelector('body');
+    const icon = document.querySelector('#icon');
+    body.classList.toggle('lightMode');
 
-   if (body.classList.contains('lightMode')) {
-    icon.innerHTML = `dark_mode`;
-   } else {
-    icon.innerHTML = `light_mode`;
-   }
+    if (body.classList.contains('lightMode')) {
+        icon.innerHTML = `dark_mode`;
+        localStorage.setItem('theme', 'lightMode');
+    } else {
+        icon.innerHTML = `light_mode`;
+        localStorage.setItem('theme', 'darkMode');
+    }
 
-    
-    
-    
 })
 
 
@@ -38,4 +37,19 @@ closeBtn.addEventListener('click', ()=>{
         overlay.classList.toggle('show');
     }
 })
+
+document.addEventListener('DOMContentLoaded', setTheme);
+
+function setTheme() {
+
+    if (!localStorage.getItem('theme')) {
+        alert('No Theme');
+        return
+    }
+
+    theme = localStorage.getItem('theme');    
+    document.querySelector('body').classList.add(theme);
+
+    
+}
 
