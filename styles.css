@@ -7,27 +7,71 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.crm-form{
+:root {
+    --bg-col: purple;
+    --body-col: #fff;
+    --danger: red;  
+}
+
+.close-btn{
+    font-size: 4rem;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 300ms ease-in-out;
+}
+
+.close-btn:hover{
+    color: var(--danger);
+    transform: scale(1.2);
+}
+
+.close-btn::before,
+.close-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: var(--body-col);
+  transform-origin: center;
+}
+
+.close-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+
+.form-bg{
    
-    
-    width: 60% !important;
-    
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;    
+    transition: 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #00000029;
+    backdrop-filter: blur(10px);
+    z-index: 10;
 }
 
 .form-ctrl{
-    background-color: rgba(23, 23, 23, 0.581);
-    width: 100%;
-    position: fixed; 
-    height: 100%;
-    top: 50%;
-    left: 50%;    
-    transform: translate(-50%, -50%);
-   
-    flex-direction: column;
-    align-items: center;
-    display: none;
+    
+    display: flex;
+   align-items: center;
+   justify-content: center;
+} 
 
-}
 
 svg{
     width: 60px;
@@ -41,9 +85,9 @@ svg{
 }
 
 .wf-parent{
-    width: 40%;
+    width: 60%;
     padding: 0px;
-    margin: 0rem 12rem;
+    
 }
 
 .home{
@@ -61,14 +105,14 @@ svg{
 
 
 .show{
-    display: flex;;    
+   transform: translate(-50%, -50%) scale(1);  
 }
 
 body {
     display: grid;
     grid-template-rows: auto 1fr auto auto;
     align-items: center; 
-    color: #fff;
+    color: var(--body-col);
     background-image: linear-gradient(to right, #080923, #101143);
 }
 a{
@@ -136,17 +180,12 @@ footer{
 }
 
 .container{
-    /* background-color: red; */
-   
+       
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     
-
-}
-
-nav{
 
 }
 
