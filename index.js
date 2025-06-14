@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', setTheme);
 
 const clicker = document.getElementById('clicker');
 // const displayer = document.querySelector('.crm-form');
@@ -38,12 +39,11 @@ closeBtn.addEventListener('click', ()=>{
     }
 })
 
-document.addEventListener('DOMContentLoaded', setTheme);
+
 
 function setTheme() {
 
     if (!localStorage.getItem('theme')) {
-        alert('No Theme');
         return
     }
 
