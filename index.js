@@ -1,27 +1,41 @@
 document.addEventListener('DOMContentLoaded', setTheme);
 
 const clicker = document.getElementById('clicker');
-// const displayer = document.querySelector('.crm-form');
+
 const closeBtn = document.querySelector('.close-btn');
 const formCtrl = document.querySelector('.form-bg');
 const overlay = document.querySelector('.overlay');
 
-const mode = document.getElementById('mode');
+const mode = document.querySelectorAll('#mode');
 
-mode.addEventListener('click', () => {
-    const body = document.querySelector('body');
-    const icon = document.querySelector('#icon');
-    body.classList.toggle('lightMode');
 
-    if (body.classList.contains('lightMode')) {
-        icon.innerHTML = `dark_mode`;
-        localStorage.setItem('theme', 'lightMode');
-    } else {
-        icon.innerHTML = `light_mode`;
-        localStorage.setItem('theme', 'darkMode');
-    }
 
-})
+
+const sideBar = document.querySelector('.sideBar');
+const menu = document.querySelector('#mobileMenu');
+
+
+
+console.log(sideBar);
+
+
+mode.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const body = document.querySelector('body');
+        const icon = document.querySelector('#icon');
+        body.classList.toggle('lightMode');
+
+        if (body.classList.contains('lightMode')) {
+            icon.innerHTML = `dark_mode`;
+            localStorage.setItem('theme', 'lightMode');
+        } else {
+            icon.innerHTML = `light_mode`;
+            localStorage.removeItem('theme');
+        }
+
+    })
+});
+
 
 
 clicker.addEventListener('click', () => {
@@ -53,3 +67,11 @@ function setTheme() {
     
 }
 
+
+function closeMe() {
+    sideBar.classList.remove('open');
+}
+
+function openMenu() {
+    sideBar.classList.add('open');
+}

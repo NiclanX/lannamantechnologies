@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/CartoonAsset 1.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <script src="/tester.js" defer></script>
     <script src="/index.js" defer></script>
 </head>
 
 <body>
     <nav>
         <ul>
-
             <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610.7 458" >
                 <title>LanTech</title>
                     <path d="M305.4,305.4v56.2A96.4,96.4,0,0,1,208.9,458H98.3L0,359.8V0H152.7V305.4Z" />
@@ -22,15 +22,25 @@
                          />
                     <rect x="229" y="194.8" width="76.3" height="68.43" />
                 </svg></a>
+            <li class="mobileView"><a href="#">Blog</a></li>
+            <li class="mobileView"><a href="#">Pricing</a></li>
+            <li class="mobileView"><a href="/contact.html">Contact</a></li>
+                <button class="toggler mobileView" id="mode">
+                    <span class="material-icons" id="icon">light_mode</span>
+                </button>
+            <span class="material-icons" id="mobileMenu" onclick="openMenu()">menu</span>
+        </ul>
+
+        <ul class="sideBar">
+            <span class="material-icons" id="closeIcon" onclick='closeMe()'>close</span>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="/contact.html">Contact</a></li>
-            <li>
-                <button class="toggler" id="mode">
+                <button  class="toggler" id="mode">
                     <span class="material-icons" id="icon">light_mode</span>
                 </button>
-            <li>
         </ul>
+
     </nav>
 
 

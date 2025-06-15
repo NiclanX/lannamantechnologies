@@ -26,10 +26,11 @@ body {
 }
 
 .lightMode{
-    --bg-col1: #fff;
-    --bg-col2: #f4f2ff;    
+    --bg-col1: #fff6f6;
+    --bg-col2: #ecfafe;    
     --body-col: #0d0820;
     --btn-bg: #fbbc05;
+
 }
 
 .close-btn{
@@ -164,7 +165,7 @@ h2{
 }
 
 h1{
-    font-size: 6em;
+    font-size: 6rem;
     margin-bottom: 20px;
     letter-spacing: 8px;
 }
@@ -176,7 +177,6 @@ h1{
     /* background-color: red; */
 }
 button{
-    margin-top: 20px;
     color: var(--body-col);
     cursor: pointer;
     padding: 10px;
@@ -263,7 +263,65 @@ ul li{
     margin: 0;
 }
 
-@media(max-width: 600px){
+.sideBar{
+    background-color: #7b7b7b;    
+    color: var(--body-col);
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    display: none;
+    transform: translateX(800px);
+    transition: 300ms ease-in-out;
+    
+}
+
+.open {
+    transform: translateX(0px);
+}
+
+.sideBar>button {
+    margin-top: auto;
+}
+
+
+.sideBar li, .sideBar li a {
+    width: 100%;
+    margin: 0px;
+    cursor: pointer;  
+    display: block;
+}
+
+.sideBar a {
+    height: 100%;
+    padding: 10px;
+}
+
+.sideBar li {
+    margin: 20px 0px;
+}
+
+
+#closeIcon {
+    color: var(--body-col);
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.mobileView{
+        display: block;
+        
+    }
+
+
+@media(max-width: 800px){
     body{
         display: grid;
         grid-row: 1fr 1fr;
@@ -275,19 +333,19 @@ ul li{
         max-width: 90%;
     }
 
+    .sideBar{
+        display: flex;
+    }
+
+    .tabletView{
+        display: none;
+    }
+
     .container {
         margin: 80px 0px;
     }
 
-    nav{
-        display: none;
-        
-    }
-
-    h1{
-        font-size: 2em;
-        letter-spacing: 3px;
-    }
+    
     .links{
         display: none;
     }
@@ -298,5 +356,15 @@ ul li{
     
     .crm-form{
         margin: -30px 10px 20px;
+    }
+
+    .mobileView{
+        display: none;
+    }
+}
+
+@media(max-width: 500px){
+    .sideBar {
+        width: 100%;
     }
 }
