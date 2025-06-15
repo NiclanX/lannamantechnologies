@@ -15,6 +15,11 @@
     --danger: red; 
     
     --btn-bg: #34a853;
+
+    --gcolblue:#4285F4;
+    --gcolred:#DB4437;
+    --gcolgreen:#0F9D58;
+    --gcolyellow:#F4B400;
 }
 
 body {
@@ -24,6 +29,7 @@ body {
     color: var(--body-col);
     background-image: linear-gradient(to right, var(--bg-col1), var(--bg-col2));
 }
+
 
 .lightMode{
     --bg-col1: #fff6f6;
@@ -286,7 +292,7 @@ ul li{
 }
 
 .sideBar>button {
-    margin-top: auto;
+    margin: auto 0px 40px 0px;
 }
 
 
@@ -320,6 +326,9 @@ ul li{
         
     }
 
+#mobileMenu{
+    display: none;
+}
 
 @media(max-width: 800px){
     body{
@@ -331,6 +340,10 @@ ul li{
     .content{
         margin: 0;
         max-width: 90%;
+    }
+
+    #mobileMenu {
+        display: block;
     }
 
     .sideBar{
