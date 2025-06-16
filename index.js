@@ -22,14 +22,20 @@ console.log(sideBar);
 mode.forEach(btn => {
     btn.addEventListener('click', () => {
         const body = document.querySelector('body');
-        const icon = document.querySelector('#icon');
+        const icon = document.querySelectorAll('#icon');
         body.classList.toggle('lightMode');
 
         if (body.classList.contains('lightMode')) {
-            icon.innerHTML = `dark_mode`;
+            icon.forEach(icon  => {
+
+                icon.innerHTML = `dark_mode`;
+            });
             localStorage.setItem('theme', 'lightMode');
         } else {
-            icon.innerHTML = `light_mode`;
+            icon.forEach(icon  => {
+                icon.innerHTML = `light_mode`;
+
+            });
             localStorage.removeItem('theme');
         }
 

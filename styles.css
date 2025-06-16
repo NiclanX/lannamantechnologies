@@ -293,8 +293,7 @@ ul li{
 
 .sideBar>button {
     margin-top: auto;
-    padding-bottom: 20px;
-    padding-bottom: env(safe-area-inset-bottom);
+    margin-bottom: 3rem
 }
 
 
