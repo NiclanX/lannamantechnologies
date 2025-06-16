@@ -1,9 +1,14 @@
+let loading = false;
+
+
 document.addEventListener('DOMContentLoaded', setTheme);
 
-const clicker = document.getElementById('clicker');
 
-const closeBtn = document.querySelector('.close-btn');
-const formCtrl = document.querySelector('.form-bg');
+
+const clicker = document.getElementById('clicker');
+const loader = document.querySelector('.loading');
+const closeBtns = document.querySelectorAll('.close-btn');
+const formCtrl = document.querySelector('.form-ctrl');
 const overlay = document.querySelector('.overlay');
 
 const mode = document.querySelectorAll('#mode');
@@ -15,15 +20,17 @@ const sideBar = document.querySelector('.sideBar');
 const menu = document.querySelector('#mobileMenu');
 
 
-
 console.log(sideBar);
 
 
 mode.forEach(btn => {
     btn.addEventListener('click', () => {
         const body = document.querySelector('body');
+        const html = document.querySelector('html');
+     
         const icon = document.querySelectorAll('#icon');
         body.classList.toggle('lightMode');
+        html.classList.toggle('lightMode');
 
         if (body.classList.contains('lightMode')) {
             icon.forEach(icon  => {
@@ -46,29 +53,45 @@ mode.forEach(btn => {
 
 clicker.addEventListener('click', () => {
     
-    // displayer.classList.toggle('show');
+
+    
     formCtrl.classList.toggle('show');
-    overlay.classList.add('show');
+    bg = document.querySelector('.form-bg');
+     bg.classList.toggle('show');
 
 });
 
-closeBtn.addEventListener('click', ()=>{
-    if (formCtrl.classList.contains('show')) {
-        formCtrl.classList.toggle('show');
-        overlay.classList.toggle('show');
-    }
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (formCtrl.classList.contains('show')) {
+            bg = document.querySelector('.form-bg');
+            bg.classList.toggle('show');
+            formCtrl.classList.toggle('show');
+
+        }
+    })
 })
+
+
+if (!loading) {
+    loader.remove();
+}
 
 
 
 function setTheme() {
-
+    
     if (!localStorage.getItem('theme')) {
+        loading = false;
         return
     }
 
     theme = localStorage.getItem('theme');    
     document.querySelector('body').classList.add(theme);
+    document.querySelector('html').classList.add(theme);
+    console.log('hi');
+     loading = false;
+    
 
     
 }

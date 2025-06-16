@@ -33,6 +33,8 @@ body {
 }
 
 
+
+
 .lightMode{
     --bg-col1: #fff6f6;
     --bg-col2: #ecfafe;    
@@ -41,6 +43,13 @@ body {
     --sidebar-col: #f3f3f3;
 
 }
+
+html{
+   color: var(--body-col);
+    background-image: linear-gradient(to right, var(--bg-col1), var(--bg-col2));
+} 
+
+
 
 .close-btn{
     font-size: 4rem;
@@ -52,7 +61,8 @@ body {
     top: 0;
     right: 0;
     transition: 300ms ease-in-out;
-    margin-right: 20px;
+    margin-right: 40px;
+    margin-top: 20px;
 }
 
 .close-btn:hover{
@@ -87,18 +97,23 @@ body {
 .form-bg{
    
     width: 100%;
+    height: 100vh;
     position: fixed;
-    top: 50%;
-    left: 50%;    
-    transition: 300ms ease-in-out;
-    transform: translate(-50%, -50%) scale(0);
+    transition: 300ms ease-in-out;    
     background-color: #00000029;
     backdrop-filter: blur(10px);
+    pointer-events: none;
+    opacity: 0;
     z-index: 10;
 }
 
+.form-bg.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
 .form-ctrl{
-    
+    transform:  scale(0);
     display: flex;
    align-items: center;
    justify-content: center;
@@ -137,7 +152,7 @@ svg{
 
 
 .show{
-   transform: translate(-50%, -50%) scale(1);  
+   transform:  scale(1);  
 }
 
 
@@ -334,7 +349,35 @@ ul li{
     display: none;
 }
 
+.loading{
+    z-index: 999;
+    
+    background-color: var(--body-col);
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.loading>svg {
+    margin-right: 0px;
+    width: 300px;
+    animation: load 1s ease infinite;
+    fill: var(--bg-col1);
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
 
 @media(max-width: 800px){
     body{
@@ -346,6 +389,9 @@ ul li{
     .content{
         margin: 0;
         max-width: 90%;
+    }
+    .wf-parent{
+        width: 90%;
     }
 
     #mobileMenu {
@@ -386,10 +432,25 @@ ul li{
     .sideBar {
         width: 100%;
     }
-}
 
-@media(max-width: 300px){
+    .wf-parent {
+        margin-top: 100px;
+    }
+    
+    .form-bg {
+        position: absolute;
+    }
+
     body {
-        overflow: hidden;
+        height: 200vh;
+    }
+
+    .close-btn {
+        margin: 0px;
+        top: 20px;
+        left: 47%;
+
+        
     }
 }
+
